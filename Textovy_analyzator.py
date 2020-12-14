@@ -43,9 +43,17 @@ while True:
 
 # 2. Výber a úprava textu
 print(f"We have {len(TEXTS)} texts to be analyzed.")
-cislo_textu = int(input(f"Enter a number btw {len(TEXTS[:1])} and {len(TEXTS)} to select: "))
-vybrany_TEXT = TEXTS[cislo_textu - 1]
+while True:
+    cislo_textu = int(input(f"Enter a number btw {len(TEXTS[:1])} and {len(TEXTS)} to select: "))
+    if len(TEXTS[:1]) <= cislo_textu <= len(TEXTS):
+        print("Correctly entered number.")
+        break
+    else:
+        print("Incorrectly entered number."
+              f"You must enter a number btw {len(TEXTS[:1])} and {len(TEXTS)} to select.")
 
+
+vybrany_TEXT = TEXTS[cislo_textu - 1]
 upraveny_TEXT = []
 for slovo in vybrany_TEXT.split():
     slovo = slovo.strip('.,')
