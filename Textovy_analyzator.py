@@ -35,7 +35,7 @@ while True:
     meno = input("Username: ")
     heslo = input("Password: ")
     print("-" * 40)
-    if meno in zoznam.keys() and heslo in zoznam.values():
+    if heslo == zoznam[meno]:
         print("Correctly entered name and password.")
         break
     else:
